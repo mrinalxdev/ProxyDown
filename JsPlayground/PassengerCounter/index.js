@@ -23,3 +23,8 @@ function save() {
     count.textContent = 0
     count = 0
 }
+
+function reset(){
+    count = 0 
+    document.getElementById("main-count").innerText = count
+}
