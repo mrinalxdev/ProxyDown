@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+main {
+    text-align: center;
+    padding: 2rem;
+}
+span {
+    margin-bottom: 3rem;
+    font-size: 30px;
+    margin-left: 2rem;
+}
+button {
+    margin: 20px 30px;
+    padding: 20px 50px;
+    cursor: pointer;
+}
