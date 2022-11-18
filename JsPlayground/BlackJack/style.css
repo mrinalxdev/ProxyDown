@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #432C7A;
+    color: #fff;
+}
+header {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 4rem;
+}
+main {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.5rem;
+}
+main p {
+    padding-top: 30px;
+    font-family: sans-serif;
+}
+button {
+    margin-top: 30px;
+    padding: 10px 50px;
+    border-radius: 10px;
+    font-size: 1.1rem ;
+    cursor: pointer;
+}
+h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
