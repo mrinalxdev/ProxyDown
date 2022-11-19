@@ -1,43 +1,68 @@
 
-let firstCard = 6
-let secondCard = 11
+let firstCard = getRandomCard()
+let secondCard = getRandomCard()
 let cardsEl = document.getElementById("cards")
 let sumEl = document.getElementById("sumel")
-let cards = [firstCard , secondCard]
+let cards = [firstCard, secondCard]
 let hasBlackJack = false 
-let sum = firstCard + secondCard
-let isAlive = true
+let sum = 0
+let isAlive = false
 
 let message = ""
-
 let messageEl = document.getElementById("message-el")
 
 
+
+function getRandomCard() {
+   let getRandom = Math.floor (Math.random () * 13 ) + 1
+
+   if (getRandom > 10) {
+    return 10
+   } 
+   else if ( getRandom == 1 ) {
+    return 11
+   }
+   else {
+    return getRandom
+   }
+}
+
 function startGame () {
+    isAlive = true
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
+
     render()
 }
 
 function render() {
-    cardsEl.textContent = "Cards : " + cards[0] + " " + cards[1]
+
+    for (let i = 0; i < cards.length ; i++ ){
+        cardsEl.textContent += cards[i] + " "
+    }
+
+
     sumEl.textContent = "Sum : " + sum
     if (sum <= 20) {
         isAlive = false
-        message = "You are in the Game Boii 😃"
+        message = "Do You Need Another Card !😃"
     }
     else if ( sum == 21 ){
         hasBlackJack = true
-        message ="You are winning Boii 🥳"
+        message ="PerfectO 🥳"
     }
     else {
         isAlive = false
-        message = "What are you doing" 
+        message = "You are Out of the Game ! 😢" 
     }
     messageEl.textContent = message
 }
 
 function newCard() {
 
-    let newCard = 4 
+    let newCard = getRandomCard()
 
     cards.push(newCard)
     alert (cards)
