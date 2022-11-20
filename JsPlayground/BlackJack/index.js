@@ -10,6 +10,15 @@ let isAlive = false
 
 let message = ""
 let messageEl = document.getElementById("message-el")
+let profileEl = document.getElementById("profile-el")
+
+let player = {
+    name: "Utkarsh", 
+    chip: 123, 
+    age: 18
+}
+
+profileEl.textContent = player.name + " " + ": $" + player.chip
 
 
 
@@ -46,7 +55,8 @@ function render() {
 
     sumEl.textContent = "Sum : " + sum
     if (sum <= 20) {
-        isAlive = false
+        isAlive = true
+        hasBlackJack = false
         message = "Do You Need Another Card !😃"
     }
     else if ( sum == 21 ){
@@ -60,13 +70,18 @@ function render() {
     messageEl.textContent = message
 }
 
+
 function newCard() {
 
-    let newCard = getRandomCard()
+    if (isAlive == true && hasBlackJack == false){
+        let newCard = getRandomCard()
 
     cards.push(newCard)
     alert (cards)
 
     sum += newCard
     render()
+    }
 }
+
+
