@@ -12,6 +12,7 @@ input {
     outline: none;
     height: 20px;
     font-size: 1.2rem;
+    border: 2px solid #000;
 }
 button {
     margin: 20px auto;
