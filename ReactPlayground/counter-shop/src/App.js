@@ -1,9 +1,12 @@
 import React from 'react'
+import Navbar from './components/navabar'
+import AppBody from './components/AppBody'
 
 const App = () => {
   return (
     <div>
-      <h1>Hello World</h1>
+        <Navbar />
+        <AppBody />
     </div>
   )
 }
