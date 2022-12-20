@@ -1,7 +1,10 @@
 import React from 'react'
 import './style.css'
+import { useState } from 'react'
 
 const AppBody = () => {
+
+    const [counter, setCounter] = useState(0) 
   return (
     <>
     <div className="reset-btn">
@@ -13,34 +16,25 @@ const AppBody = () => {
 
     <div className="counter-expres">
         <div className="operation">
-            <p className='main'>Zero</p>
+            <p className='main'>{counter}</p>
             
-            <button className='plus'>Increase</button>
-            <button className='minus'>Decrease</button>
+            <button className='plus' onClick={() => setCounter((prevCounter) => prevCounter + 1)}>Increase</button>
+            <button className='minus' onClick={() => setCounter((prevCounter) => prevCounter - 1 )}>Decrease</button>
             <button className='del'>Delete</button>
         </div>
 
         <div className="operation">
-            <p className='main'>Zero</p>
+            <p className='main'>{counter}</p>
             
-            <button className='plus'>Increase</button>
-            <button className='minus'>Decrease</button>
+            <button className='plus' onClick={() => setCounter((prevCounter) => prevCounter + 1)}>Increase</button>
+            <button className='minus' onClick={() => setCounter((prevCounter) => prevCounter - 1 )}>Decrease</button>
             <button className='del'>Delete</button>
         </div>
-
         <div className="operation">
-            <p className='main'>Zero</p>
+            <p className='main'>{counter}</p>
             
-            <button className='plus'>Increase</button>
-            <button className='minus'>Decrease</button>
-            <button className='del'>Delete</button>
-        </div>
-
-        <div className="operation">
-            <p className='main'>Zero</p>
-            
-            <button className='plus'>Increase</button>
-            <button className='minus'>Decrease</button>
+            <button className='plus' onClick={() => setCounter((prevCounter) => prevCounter + 1)}>Increase</button>
+            <button className='minus' onClick={() => setCounter((prevCounter) => prevCounter - 1 )}>Decrease</button>
             <button className='del'>Delete</button>
         </div>
     </div>
