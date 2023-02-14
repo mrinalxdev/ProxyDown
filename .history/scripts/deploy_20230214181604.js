@@ -13,7 +13,7 @@ async function main() {
 
   await mintExample.deployed();
 
-  console.log("MintExample deployed to :",  mintExample.address)
+  console.lo("MintExample deployed to :",  mintExample.address)
 }
 // and properly handle errors.
 main().catch((error) => {

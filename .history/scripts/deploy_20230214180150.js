@@ -9,12 +9,16 @@ async function main() {
   const lockedAmount = hre.ethers.utils.parseEther("1");
 
   const MintExample = await hre.ethers.getContractFactory("MintExample");
-  const mintExample = await MintExample.deploy("Minter", "MINT");
+  const MintExample = await MintExample.deploy("Minter");
 
-  await mintExample.deployed();
+  await MintExample.deployed();
 
-  console.log("MintExample deployed to :",  mintExample.address)
+  console.log(
+    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
+  );
 }
+
+// We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 main().catch((error) => {
   console.error(error);

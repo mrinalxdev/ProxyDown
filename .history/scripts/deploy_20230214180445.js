@@ -11,9 +11,9 @@ async function main() {
   const MintExample = await hre.ethers.getContractFactory("MintExample");
   const mintExample = await MintExample.deploy("Minter", "MINT");
 
-  await mintExample.deployed();
+  await MintExample.deployed();
 
-  console.log("MintExample deployed to :",  mintExample.address)
+  console.lo("MintExample deployed to :" mintExample.address)
 }
 // and properly handle errors.
 main().catch((error) => {

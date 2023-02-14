@@ -2,8 +2,8 @@
 pragma solidity ^0.8.9;
 
 import '@openzeppelin/contracts/access/Ownable.sol';
-import '@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol';
-import '@openzeppelin/contracts/utils/math/SafeMath.sol';
+import '@openzepplin/contracts/token/ERC721/extensions/ERC721Enumerable.sol';
+import '@openzepplelin/contracts/utils/math/SafeMath.sol';
 
 contract MintExample is ERC721Enumerable, Ownable{
     mapping (address => uint256) public balances;

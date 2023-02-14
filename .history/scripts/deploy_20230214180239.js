@@ -9,11 +9,10 @@ async function main() {
   const lockedAmount = hre.ethers.utils.parseEther("1");
 
   const MintExample = await hre.ethers.getContractFactory("MintExample");
-  const mintExample = await MintExample.deploy("Minter", "MINT");
+  const MintExample = await MintExample.deploy("Minter", "MINT");
 
-  await mintExample.deployed();
+  await MintExample.deployed();
 
-  console.log("MintExample deployed to :",  mintExample.address)
 }
 // and properly handle errors.
 main().catch((error) => {
