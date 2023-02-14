@@ -10,19 +10,7 @@ function App() {
 
   const [ accounts, setAccounts ] = useState([])
   
-  async function connectAccounts() {
-
-    if (window.ethereum){
-      const accounts = await window.ethereum.request({
-        method : "eth_requestAccounts"
-      })
-      setAccounts(accounts)
-    }
-  }
-
-  useEffect(() => {
-    connectAccounts()
-  }, [])
+  async function connectA
 
   return (
     <div className="App">

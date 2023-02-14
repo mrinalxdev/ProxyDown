@@ -14,15 +14,10 @@ function App() {
 
     if (window.ethereum){
       const accounts = await window.ethereum.request({
-        method : "eth_requestAccounts"
+        method : "eth"
       })
-      setAccounts(accounts)
     }
   }
-
-  useEffect(() => {
-    connectAccounts()
-  }, [])
 
   return (
     <div className="App">

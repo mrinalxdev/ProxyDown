@@ -20,9 +20,7 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    connectAccounts()
-  }, [])
+  useEfe
 
   return (
     <div className="App">

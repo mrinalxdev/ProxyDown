@@ -16,13 +16,8 @@ function App() {
       const accounts = await window.ethereum.request({
         method : "eth_requestAccounts"
       })
-      setAccounts(accounts)
     }
   }
-
-  useEffect(() => {
-    connectAccounts()
-  }, [])
 
   return (
     <div className="App">
