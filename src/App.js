@@ -32,14 +32,32 @@ function App() {
       const signer = provider.getSigner()
       const contract = new ehters.Contract(
         mintExampleAddress,
-        mintExampleAbi.abi
+        mintExampleAbi.abi,
+        signer
       )
+      try{
+        const response = await contract.mint(BigNumber.from(minAmount))
+        console.log("Response : ", response)
+      } catch(err) {
+        console.log("Error: ", err)
+      }
     }
   }
 
   return (
     <div className="App">
-     
+      this is How i created my first Mint Button
+      {accounts.length && (
+        <div>
+          <button onClick = {() => setMintamount(mintAmount - 1)}> - </button>
+          
+          {mintAmount}
+
+          <button onClick = {() => setMintAmount(mintAmount + 1)}> + </button>
+
+          <button onClick= {handleMint}>Mint</button>
+        </div>
+      )}
     </div>
   );
 }
