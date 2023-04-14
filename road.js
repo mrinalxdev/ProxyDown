@@ -1,5 +1,5 @@
 class Road {
-  contructor(x, width, laneCount) {
+  contructor(x, width, laneCount = 3) {
     this.x = x;
     this.widht = width;
     this.laneCount = laneCount;
@@ -15,7 +15,12 @@ class Road {
 
   draw(ctx) {
     ctx.lineWidth = 5;
-    ctx.styleStroke = "white";
+    ctx.strokeStyle = "white";
+
+    ctx.beginPath();
+    ctx.moveTo(this.left, this.top);
+    ctx.lineTo(this.left, this.bottom);
+    ctx.stroke();
 
     ctx.beginPath();
     ctx.moveTo(this.right, this.top);
