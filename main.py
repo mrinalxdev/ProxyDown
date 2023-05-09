@@ -7,12 +7,15 @@ def startDownload() :
     try :
         ytLink = link.get()
         ytObject = YouTube(ytLink)
-        video = ytObject.streams.get_highest_resolution()
+        video = ytObject.streams.get_lowest_resolution()
+        
+        title.configure(text=ytObject.title, text_color="white")
+        finishLabel.configure(text="")
         video.download()
-    except: 
-        print("There is an Error with the Link. Kindly check !")
+    except:
+        finishLabel.configure(text="Download Error", text_color="red")
 
-    print("Download Complete")
+    finishLabel.configure(text="Downloaded!")
 
 
 #Default Settings 
