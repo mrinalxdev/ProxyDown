@@ -2,12 +2,15 @@ import tkinter
 import customtkinter
 from pytube import YouTube
 
+#Default Settings 
+customtkinter.set_appearance_mode("System")
+customtkinter.set_default_color_theme("green")
 
 def startDownload() :
     try :
         ytLink = link.get()
         ytObject = YouTube(ytLink, on_progress_callback=on_progress)
-        video = ytObject.streams.get_lowest_resolution()
+        video = ytObject.streams.get_highest_resolution()
         
         title.configure(text=ytObject.title, text_color="white")
         finishLabel.configure(text="")
@@ -26,11 +29,6 @@ def on_progress(stream, chunk, bytes_remaining):
     pPercentage.update()
 
     progressBar.float((percentage_of_completetion) / 100)
-
-
-#Default Settings 
-customtkinter.set_appearance_mode("System")
-customtkinter.set_default_color_theme("blue")
 
 # ProxyDown
 app = customtkinter.CTk()
