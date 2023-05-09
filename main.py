@@ -12,6 +12,8 @@ def startDownload() :
     except: 
         print("There is an Error with the Link. Kindly check !")
 
+    print("Download Complete")
+
 
 #Default Settings 
 customtkinter.set_appearance_mode("System")
@@ -19,7 +21,7 @@ customtkinter.set_default_color_theme("blue")
 
 # ProxyDown
 app = customtkinter.CTk()
-app.geometry("720x480")
+app.geometry("480x360")
 app.title("ProxyDown | A Youtube Video downloader")
 
 
@@ -31,7 +33,10 @@ link = customtkinter.CTkEntry(app, width=350, height=40, textvariable=url_var)
 link.pack()
 
 download = customtkinter.CTkButton(app, text="Download", command=startDownload) 
-download.pack()
+download.pack(padx=10 ,pady=10)
+
+finishLabel = customtkinter.CTkLabel(app, text="")
+finishLabel.pack()
 
 # App listening
 app.mainloop()
